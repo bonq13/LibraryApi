@@ -8,7 +8,7 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     public AppDbContext CreateDbContext(string[] args)
     {
         var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseSqlite("Data Source=library.db")
+            .UseNpgsql("Host=localhost;Port=5432;Database=librarydb;Username=postgres;Password=postgres")
             .Options;
         return new AppDbContext(options);
     }

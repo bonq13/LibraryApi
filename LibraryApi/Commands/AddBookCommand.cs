@@ -1,5 +1,6 @@
+using LibraryApi.Models;
 using MediatR;
 
 namespace LibraryApi.Commands;
 
-public record AddBookCommand(string Title, string Author, bool IsAvailable) : IRequest<bool>;
+public record AddBookCommand(string Title, string Author, bool IsAvailable) : IRequest<Book?>;
