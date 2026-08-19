@@ -1,8 +1,8 @@
-using LibraryApi.Models;
-using LibraryApi.Repositories;
+using LibraryApi.Application.Repositories;
+using LibraryApi.Domain.Entities;
 using MediatR;
 
-namespace LibraryApi.Queries;
+namespace LibraryApi.Application.Queries;
 
 public class GetAllBooksHandler : IRequestHandler<GetAllBooksQuery, List<Book>>
 {

@@ -1,0 +1,13 @@
+# Build outputs
+bin/
+obj/
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# macOS
+.DS_Store
+
+# Local database (jeśli używasz SQLite lokalnie)
+LibraryApi/library.db

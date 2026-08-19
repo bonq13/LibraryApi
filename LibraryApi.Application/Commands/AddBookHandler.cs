@@ -1,9 +1,8 @@
-using LibraryApi.Models;
-using LibraryApi.Repositories;
-using LibraryApi.Services;
+using LibraryApi.Domain.Entities;
+using LibraryApi.Application.Services;
 using MediatR;
 
-namespace LibraryApi.Commands;
+namespace LibraryApi.Application.Commands;
 
 public class AddBookHandler : IRequestHandler<AddBookCommand, Book?>
 {

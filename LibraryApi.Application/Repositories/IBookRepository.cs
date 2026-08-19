@@ -1,7 +1,7 @@
-using LibraryApi.Models;
-using LibraryApi.Specifications;
+using LibraryApi.Domain.Entities;
+using LibraryApi.Application.Specifications;
 
-namespace LibraryApi.Repositories;
+namespace LibraryApi.Application.Repositories;
 
 public interface IBookRepository
 {
@@ -9,5 +9,4 @@ public interface IBookRepository
     Task<Book?> GetBookById(int id);
     Task AddBook(Book book);
     Task<List<Book>> GetBySpecification(ISpecification<Book> spec);
-
 }

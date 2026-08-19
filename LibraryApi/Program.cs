@@ -3,19 +3,23 @@ using System.Text;
 using System.Threading.RateLimiting;
 using Asp.Versioning;
 using FluentValidation;
-using LibraryApi.Commands;
-using LibraryApi.Data;
+using LibraryApi.Application.Commands;
+using LibraryApi.Application.Queries;
+using LibraryApi.Application.Repositories;
+using LibraryApi.Application.Services;
+using LibraryApi.Application.Specifications;
+using LibraryApi.Domain.Entities;
+using LibraryApi.Infrastructure.Data;
+using LibraryApi.Infrastructure.Repositories;
 using LibraryApi.Models;
-using LibraryApi.Queries;
-using LibraryApi.Repositories;
 using LibraryApi.Services;
-using LibraryApi.Specifications;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +32,8 @@ builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddSingleton<IJwtService, JwtService>();
 builder.Services.AddMediatR(cfg =>
-    cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
-builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+    cfg.RegisterServicesFromAssembly(typeof(AddBookCommand).Assembly));
+builder.Services.AddValidatorsFromAssemblyContaining<AddBookCommandValidator>();
 builder.Services.AddProblemDetails();
 builder.Services.AddApiVersioning(options =>
 {
@@ -110,7 +114,7 @@ app.MapPost("/login", async (LoginRequest request, IJwtService jwtService) =>
 {
     const string testEmail = "admin@library.com";
     const string testPassword = "Admin123!";
-    const string testRole = "User";
+    const string testRole = "Admin";
 
     if (request.Email == testEmail && request.Password == testPassword)
     {

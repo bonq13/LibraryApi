@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
-using LibraryApi.Models;
+using LibraryApi.Domain.Entities;
 
-namespace LibraryApi.Specifications;
+namespace LibraryApi.Application.Specifications;
 
 public class AvailableBooksSpecification : ISpecification<Book>
 {

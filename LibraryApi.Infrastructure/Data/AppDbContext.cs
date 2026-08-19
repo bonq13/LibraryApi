@@ -1,7 +1,7 @@
-using LibraryApi.Models;
+using LibraryApi.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryApi.Data;
+namespace LibraryApi.Infrastructure.Data;
 
 public class AppDbContext : DbContext
 {

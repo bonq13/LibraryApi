@@ -1,7 +1,7 @@
-using LibraryApi.Models;
-using LibraryApi.Repositories;
+using LibraryApi.Domain.Entities;
+using LibraryApi.Application.Repositories;
 
-namespace LibraryApi.Services;
+namespace LibraryApi.Application.Services;
 
 public class BookService : IBookService
 {

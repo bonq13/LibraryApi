@@ -21,4 +21,9 @@
         <PackageReference Include="Scalar.AspNetCore" Version="2.16.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\LibraryApi.Application\LibraryApi.Application.csproj" />
+      <ProjectReference Include="..\LibraryApi.Infrastructure\LibraryApi.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

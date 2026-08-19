@@ -1,9 +1,10 @@
-using LibraryApi.Data;
-using LibraryApi.Models;
-using LibraryApi.Specifications;
+using LibraryApi.Application.Repositories;
+using LibraryApi.Application.Specifications;
+using LibraryApi.Domain.Entities;
+using LibraryApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryApi.Repositories;
+namespace LibraryApi.Infrastructure.Repositories;
 
 public class BookRepository : IBookRepository
 {

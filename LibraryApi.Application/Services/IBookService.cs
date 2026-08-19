@@ -1,6 +1,6 @@
-using LibraryApi.Models;
+using LibraryApi.Domain.Entities;
 
-namespace LibraryApi.Services;
+namespace LibraryApi.Application.Services;
 
 public interface IBookService
 {

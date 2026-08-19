@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 
-namespace LibraryApi.Specifications;
+namespace LibraryApi.Application.Specifications;
 
 public interface ISpecification<T>
 {

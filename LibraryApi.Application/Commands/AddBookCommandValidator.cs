@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace LibraryApi.Commands;
+namespace LibraryApi.Application.Commands;
 
 public class AddBookCommandValidator : AbstractValidator<AddBookCommand>
 {
@@ -21,8 +21,5 @@ public class AddBookCommandValidator : AbstractValidator<AddBookCommand>
             .WithMessage("Autor za krótki - minimum 2 znaki")
             .MaximumLength(200)
             .WithMessage("Autor za długi - max 200 znaków");
-        
-        
-
     }
 }
