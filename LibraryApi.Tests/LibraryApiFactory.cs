@@ -11,7 +11,7 @@ namespace LibraryApi.Tests;
 
 public class LibraryApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
-    private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder("postgres:latest")
+    private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder("postgres:16")
         .WithDatabase("librarydb_test")
         .WithUsername("postgres")
         .WithPassword("postgres")
